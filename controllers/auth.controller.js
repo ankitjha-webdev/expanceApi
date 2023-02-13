@@ -49,7 +49,7 @@ exports.signin = async (req, res) => {
       });
     }
 
-    const token = jwt.sign({ id: user.id }, config.secret, {
+    const token = jwt.sign({ user_id: user.id }, config.secret, {
       expiresIn: 86400, // 24 hours
     });
 
@@ -76,3 +76,7 @@ exports.signout = (req, res) => {
     this.next(error);
   }
 };
+
+
+
+// how to pass session token to frontend?

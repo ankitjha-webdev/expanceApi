@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cookieSession({
     name: "session",
-    secret: "COOKIE_SECRET", // should use as secret environment variable
+    secret: process.env.COOKIE_SECRET, // should use as secret environment variable
     httpOnly: true,
   })
 );
