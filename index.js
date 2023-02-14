@@ -4,7 +4,6 @@ const cookieSession = require("cookie-session");
 const db = require("./models");
 const app = express();
 require("dotenv").config();
-const port = process.env || 3000 ;
 
 // var corsOptions = {
 //   origin: "http://localhost:4200",
@@ -49,8 +48,6 @@ app.use((req, res) => {
   res.status(404).json({ message: "Route not found!" });
 });
 
-
-
-app.listen(port, () =>
-  console.log(`Expenditure app listening on port ${port}!`)
+app.listen(process.env.port, () =>
+  console.log(`Expenditure app listening on port ${process.env.port}!`)
 );
